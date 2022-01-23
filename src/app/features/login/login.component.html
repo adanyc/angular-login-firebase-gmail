@@ -1,0 +1,20 @@
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="handlerSubmit()">
+    <fieldset>
+      <label style="width: 100px;">Email</label>
+      <input type="text" placeholder="E-mail" formControlName="email" />
+      <br>
+      <span class="error" *ngIf="isInvalidEmail">Enter a valid e-mail</span>
+      <br>
+      <label>Password</label>
+      <input type="password" placeholder="******" formControlName="password" />
+      <br>
+      <span class="error" *ngIf="isInvalidPassword">Password is required</span>
+      <br>
+      <button type="submit">Login</button>
+      <br>
+      <button type="button" (click)="signinWithGoogle()">Login con Google</button>
+      <p class="error">{{ authError }}</p>
+    </fieldset>
+  </form>
+</div>
